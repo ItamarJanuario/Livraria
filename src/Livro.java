@@ -1,4 +1,4 @@
-public class Livro {
+public abstract class Livro implements Produto {
 
     private String nome;
     private String descricao;
@@ -14,11 +14,11 @@ public class Livro {
         this.isbn = "000-00-00000-00-0";
     }
 
-    double getValor() {
+    public double getValor() {
         return this.valor;
     }
 
-    void setValor(double valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -72,17 +72,8 @@ public class Livro {
         System.out.println("--");
     }
 
-     public boolean aplicaDesconteDe(double porcentagem) {
-
-        if(porcentagem > 0.3){
-            return false;
-        }
-        
-        this.valor -= this.valor * porcentagem;
-        return true;
-    }
-
     boolean temAutor() {
         return this.autor != null;
     }
+
 }
