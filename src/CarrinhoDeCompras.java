@@ -6,7 +6,6 @@ public class CarrinhoDeCompras {
         System.out.println("Adicionando: " + livro);
         livro.aplicaDesconteDe(0.05);
         total += livro.getValor();
-        System.out.println("seila");
     }
 
     public double getTotal() {
