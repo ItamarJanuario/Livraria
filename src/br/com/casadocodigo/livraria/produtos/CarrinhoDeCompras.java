@@ -14,6 +14,8 @@ public class CarrinhoDeCompras {
 
     public void adiciona (Produto produto) {
         this.produtos.add(produto);
+        System.out.println("Adicionando produto: " +  produto);
+        this.total += produto.getValor();
     }
 
     public void remove(int posicao) {
