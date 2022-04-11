@@ -12,6 +12,11 @@ public class Ebook extends Livro implements Promocional {
     }
 
     @Override
+    public String toString() {
+        return "Ebook";
+    }
+
+    @Override
     public boolean aplicaDescontoDe(double porcentagem) {
         if (porcentagem > 0.15) {
             return false;

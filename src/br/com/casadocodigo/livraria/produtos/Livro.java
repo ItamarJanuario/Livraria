@@ -1,4 +1,5 @@
 package br.com.casadocodigo.livraria.produtos;
+
 import br.com.casadocodigo.livraria.Autor;
 import br.com.casadocodigo.livraria.exception.AutorNuloException;
 
@@ -16,7 +17,7 @@ public abstract class Livro implements Produto {
         this.autor = autor;
     }
 
-    public Livro(){
+    public Livro() {
         this.isbn = "000-00-00000-00-0";
     }
 
@@ -71,7 +72,7 @@ public abstract class Livro implements Produto {
         System.out.println(isbn);
 
 
-        if(this.temAutor()){
+        if (this.temAutor()) {
             autor.mostrarDetalhes();
         }
 
@@ -80,6 +81,19 @@ public abstract class Livro implements Produto {
 
     boolean temAutor() {
         return this.autor != null;
+    }
+
+    @Override
+    public int compareTo(Produto outro) {
+
+        if (this.getValor() < outro.getValor()) {
+            return -1;
+        }
+
+        if (this.getValor() > outro.getValor()) {
+            return 1;
+        }
+        return 0;
     }
 
 }
