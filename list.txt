@@ -1,0 +1,5 @@
+------ >  pesquisar mais sobre try chatch.
+------ > pesquisar mais sobre object e equals na lang JAVA
+
+------ > fazer exercicios em Java para a melhora de  lógica de programação.
+------ > fazer anotações de conversões de variaveis do tipo primitivo | Wrappers dos tipos primitivos.

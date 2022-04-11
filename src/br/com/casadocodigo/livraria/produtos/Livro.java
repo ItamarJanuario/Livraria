@@ -1,4 +1,9 @@
-public class Livro {
+package br.com.casadocodigo.livraria.produtos;
+
+import br.com.casadocodigo.livraria.Autor;
+import br.com.casadocodigo.livraria.exception.AutorNuloException;
+
+public abstract class Livro implements Produto {
 
     private String nome;
     private String descricao;
@@ -6,19 +11,21 @@ public class Livro {
     private String isbn;
 
     public Livro(Autor autor) {
-        this();
+        if (autor == null) {
+            throw new AutorNuloException("O autor do livro não pode ser nulo !!");
+        }
         this.autor = autor;
     }
 
-    public Livro(){
+    public Livro() {
         this.isbn = "000-00-00000-00-0";
     }
 
-    double getValor() {
+    public double getValor() {
         return this.valor;
     }
 
-    void setValor(double valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -56,7 +63,7 @@ public class Livro {
 
     Autor autor;
 
-    void mostrarDetalhes() {
+    public void mostrarDetalhes() {
 
         System.out.println("Mostrando detalhes do livro");
         System.out.println(nome);
@@ -65,24 +72,28 @@ public class Livro {
         System.out.println(isbn);
 
 
-        if(this.temAutor()){
+        if (this.temAutor()) {
             autor.mostrarDetalhes();
         }
 
         System.out.println("--");
     }
 
-     public boolean aplicaDesconteDe(double porcentagem) {
-
-        if(porcentagem > 0.3){
-            return false;
-        }
-        
-        this.valor -= this.valor * porcentagem;
-        return true;
-    }
-
     boolean temAutor() {
         return this.autor != null;
     }
+
+    @Override
+    public int compareTo(Produto outro) {
+
+        if (this.getValor() < outro.getValor()) {
+            return -1;
+        }
+
+        if (this.getValor() > outro.getValor()) {
+            return 1;
+        }
+        return 0;
+    }
+
 }

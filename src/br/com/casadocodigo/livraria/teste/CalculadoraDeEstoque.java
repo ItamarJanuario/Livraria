@@ -1,9 +1,8 @@
-
 //public class CalculadoraDeEstoque {
 //
 //    public static void main(String[] args){
 //
-//        Livro livro = new Livro();
+//        br.com.casadocodigo.livraria.produtos.Livro livro = new br.com.casadocodigo.livraria.produtos.Livro();
 //        livro.nome = "Java 8 Pratico";
 //        livro.descricao = "Novos recursos da Linguagem";
 //        livro.valor = 59.90;
